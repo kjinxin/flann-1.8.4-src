@@ -1,0 +1,8 @@
+dataset = single(rand(128,10000));
+testset = single(rand(128,1000));
+params.algorithm = 'kdtree';
+params.trees = 8;
+params.checks = 64;
+% perform the nearest-neighbor search
+[result, dists] = flann_search(dataset, testset, 5, params);
+result
